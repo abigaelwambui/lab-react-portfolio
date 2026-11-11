@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ProjectForm() {
+export default function ProjectForm({setProjects}) {
 
     const [formData, setFormData] = useState({
         "name": "",
@@ -9,32 +9,41 @@ export default function ProjectForm() {
         "year": ""
     })
 
-    function handleChange(event) {
+    function handleFormChange(event) {
         setFormData ((prevForm)=> ({
             ...prevForm,
             [event.target.name]: event.target.value
         }))
+
+        // console.log(formData)
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault()
+        console.log(formData)
+        setProjects((prevProjects)=> [...prevProjects, formData])
     }
 
     return (
         <>
-        <form className="container border border-keyline rounded-9 p-3 my-5">
+        <form onSubmit={handleFormSubmit} className="container border border-keyline rounded-9 p-3 my-5">
             <div className="m-5">
-                <label for="name" class="form-label">Project Name</label>
-                <input name="name" value={formData.name} class="form-control" type="text" id="name" placeholder="Project name"/>
+                <label htmlFor="name" className="form-label">Project Name</label>
+                <input onChange={handleFormChange} name="name" value={formData.name} className="form-control" type="text" id="name" placeholder="Project name"/>
             </div>
             <div className="m-5">
-                <label for="image" class="form-label">Image Url</label>
-                <input name="image" value={formData.image} class="form-control" type="text" id="image" placeholder="e.g https//.."/>
+                <label htmlFor="image" className="form-label">Image Url</label>
+                <input onChange={handleFormChange} name="image" value={formData.image} className="form-control" type="text" id="image" placeholder="e.g https//.."/>
             </div>
             <div className="m-5">
-                <label for="description" class="form-label">Project Description</label>
-                <input name="description" value={formData.description} class="form-control" type="text" id="description" placeholder="Project description"/>
+                <label htmlFor="description" className="form-label">Project Description</label>
+                <input onChange={handleFormChange} name="description" value={formData.description} className="form-control" type="text" id="description" placeholder="Project description"/>
             </div>
             <div className="m-5">
-                <label for="year" class="form-label">Latest update</label>
-                <input name="year" value={formData.year} class="form-control" type="text" id="year" placeholder="e.g 2003"/>
+                <label htmlFor="year" className="form-label">Latest update</label>
+                <input onChange={handleFormChange} name="year" value={formData.year} className="form-control" type="text" id="year" placeholder="e.g 2003"/>
             </div>
+            <button type="submit">Add Project</button>
         </form>
         </>
     )

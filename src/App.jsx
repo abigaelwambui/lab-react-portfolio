@@ -80,7 +80,7 @@ export default function App() {
     <>
       <Navbar/>
       <main className="container">
-        <ProjectForm/>
+        <ProjectForm setProjects={setProjects}/>
         <ProjectList projects={projects}/>
       </main>
       
