@@ -1,8 +1,6 @@
 import ProjectCard from "./ProjectCard";
 
-export default function ProjectList ({ projects }) {
-    
-
+export default function ProjectList ({ projects, setProjects }) {
 
     return (
         <>
@@ -17,6 +15,10 @@ export default function ProjectList ({ projects }) {
                             image={project.image}
                             description={project.description}
                             year={project.year}
+                            id= {project.id}
+                            projects={projects}
+                            setProjects={setProjects}
+
                         />
 
                     </div>

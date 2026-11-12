@@ -20,10 +20,7 @@ export default function AboutMe() {
                             I'm always eager to develop my skills, explore new technologies, collaborate with others, and work on projects that make a difference. This portfolio is a collection of my journey, experiences, and the things I've created along the way.
                             I'm excited about what lies ahead and always open to new opportunities!
                         </p>
-
-                        <button className="btn btn-outline theme-success">
-                            Contact me
-                        </button>
+                        <a class="btn-outline theme-success" href="#footer" role="button">Contact me</a>
                     </div>
                 </div>
             

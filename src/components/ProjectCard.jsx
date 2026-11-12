@@ -1,5 +1,10 @@
-export default function ProjectCard({name, image, description, year}) {
+export default function ProjectCard({name, image, description, year, id, removeProject, projects, setProjects}) {
 
+    function removeProject (id) {
+        const remainingProjects = projects.filter((project)=> project.id !== id)
+        setProjects([...remainingProjects])
+        console.log(remainingProjects)
+    }
 
 
     return(
@@ -11,7 +16,7 @@ export default function ProjectCard({name, image, description, year}) {
                     <h4 className="card-title">{name}</h4>
                     <p className="card-text">{description}</p>
                     <p className="card-text"><small className="fg-2">Last updated {year}</small></p>
-                    <button className="btn btn-sm btn-outline theme-danger">Remove Project</button>
+                    <button onClick={()=>removeProject(id)} className="btn btn-sm btn-outline theme-danger">Remove Project</button>
                 </div>
                 
             </div>

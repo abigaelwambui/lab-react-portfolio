@@ -88,7 +88,7 @@ export default function App() {
       <main  className="container">
         {isFormOpen && <ProjectForm setProjects={setProjects}/>}
         {isAboutMeOpen && <AboutMe/>}
-        <ProjectList projects={projects} className={`${isFormOpen ? "form-open" : ""}`}/>
+        <ProjectList projects={projects} setProjects={setProjects} className={`${isFormOpen ? "form-open" : ""}`}/>
       </main>
 
       <Footer year={new Date().getFullYear()} />
