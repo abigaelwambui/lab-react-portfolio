@@ -8,7 +8,7 @@ export default function Navbar ({isFormOpen, setIsFormOpen, isAboutMeOpen, setIs
                 <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img src={Logo} alt="Portfli" width="30" height="24" className="d-inline-block align-text-top"/>
-                    Portfli
+                    <big>Portfli</big>
                 </a>
                 <Buttons isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} isAboutMeOpen={isAboutMeOpen} setIsAboutMeOpen={setIsAboutMeOpen}/>
                 </div>
