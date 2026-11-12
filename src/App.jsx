@@ -3,6 +3,7 @@ import ProjectForm from "./components/ProjectForm"
 import ProjectList from "./components/ProjectList"
 import { useState } from "react"
 import "./App.css"
+import AboutMe from "./components/AboutMe"
 
 
 export default function App() {
@@ -77,13 +78,15 @@ export default function App() {
   )
 
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false)
 
   return (
     <>
-      <Navbar isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen}/>
+      <Navbar isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} isAboutMeOpen={isAboutMeOpen} setIsAboutMeOpen={setIsAboutMeOpen}/>
       
       <main  className="container">
         {isFormOpen && <ProjectForm setProjects={setProjects}/>}
+        {isAboutMeOpen && <AboutMe/>}
         <ProjectList projects={projects} className={`${isFormOpen ? "form-open" : ""}`}/>
       </main>
       

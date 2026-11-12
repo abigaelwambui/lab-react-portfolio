@@ -4,3 +4,11 @@
 .form-open {
     height: 100px
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: hwb(0 92% 7%);
+  color: rgb(7, 7, 7);
+}

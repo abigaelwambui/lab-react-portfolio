@@ -46,7 +46,7 @@ export default function ProjectForm({setProjects}) {
     return (
         <>
        
-        <form onSubmit={handleFormSubmit} className="container border border-keyline rounded-9 p-3 my-5">
+        <form onSubmit={handleFormSubmit} className="container border border-keyline rounded-9 p-3 my-5 bg-white">
             <h3 className="p-3">Add your project</h3>
             <div className="m-5">
                 <label htmlFor="name" className="form-label">Project Name</label>

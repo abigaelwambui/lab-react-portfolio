@@ -6,7 +6,7 @@ export default function ProjectList ({ projects }) {
 
     return (
         <>
-        <div className="container border border-keyline rounded-9 p-3">
+        <div className="container p-3 my-5">
             <h2>My Projects</h2>
             <div className="row row-cols-1 md:row-cols-3 g-5 my-5">
                 {projects.map((project)=>(
