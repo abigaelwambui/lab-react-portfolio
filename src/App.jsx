@@ -4,6 +4,7 @@ import ProjectList from "./components/ProjectList"
 import { useState } from "react"
 import "./App.css"
 import AboutMe from "./components/AboutMe"
+import Footer from "./components/Footer"
 
 
 export default function App() {
@@ -89,6 +90,8 @@ export default function App() {
         {isAboutMeOpen && <AboutMe/>}
         <ProjectList projects={projects} className={`${isFormOpen ? "form-open" : ""}`}/>
       </main>
+
+      <Footer year={new Date().getFullYear()} />
       
     </>
   )

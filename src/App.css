@@ -12,3 +12,37 @@ body {
   background-color: hwb(0 92% 7%);
   color: rgb(7, 7, 7);
 }
+
+footer {
+    background-color: hwb(157 11% 76%);
+    margin-top: 20px;
+}
+
+#footer {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+    
+}
+
+#footer p{
+    line-height: 2em;
+}
+
+#footer ul {
+    list-style: none;
+    line-height: 2em;
+}
+
+li .footer-link{
+    text-decoration: none;
+    color: white;
+}
+
+footer .copy {
+    color: white
+}
