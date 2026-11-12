@@ -76,12 +76,15 @@ export default function App() {
     ]
   )
 
+  const [isFormOpen, setIsFormOpen] = useState(false)
+
   return (
     <>
-      <Navbar/>
-      <main className="container">
-        <ProjectForm setProjects={setProjects}/>
-        <ProjectList projects={projects}/>
+      <Navbar isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen}/>
+      
+      <main  className="container">
+        {isFormOpen && <ProjectForm setProjects={setProjects}/>}
+        <ProjectList projects={projects} className={`${isFormOpen ? "form-open" : ""}`}/>
       </main>
       
     </>
