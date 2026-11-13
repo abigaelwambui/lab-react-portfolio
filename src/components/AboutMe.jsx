@@ -15,17 +15,18 @@ export default function AboutMe() {
 
     const [imageInput, setImageInput] = useState("")
 
-    
+    const [aboutError, setAboutError] = useState("")
 
     function handleSubmit (event) {
         event.preventDefault()
         setAboutMeText(aboutMeInput)
         setAboutMeImage(imageInput)
-        setIsUpdateOpen(false)
+        
 
-        if(!aboutMeInput.trim() && !imageInput.trim()) {
+        if(!aboutMeInput.trim() || !imageInput.trim()) {
             setAboutMeText(aboutMeText)
             setAboutMeImage(aboutMeImage)
+            setAboutError("Please fill in the section")
             return;
         }
     }
@@ -66,8 +67,11 @@ export default function AboutMe() {
                             <label htmlFor="aboutme-image" className="form-label">Image Url</label>
                             <input onChange={(event)=> setImageInput (event.target.value)} name="image" value={imageInput} className="form-control" type="text" id="aboutme-image" placeholder="e.g https//.."/>
                         </div>
-            
+
+                        <p><small>{aboutError}</small></p>
+
                         <button className='btn btn-outline theme-info' type="submit">Submit</button>
+
                     </form>}
 
             </div>
