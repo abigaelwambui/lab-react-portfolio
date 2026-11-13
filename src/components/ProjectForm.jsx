@@ -25,7 +25,7 @@ export default function ProjectForm({setProjects}) {
         console.log(formData)
         
         
-        if (formData.image && !formData.image.startsWith("http://") || !formData.image.startsWith("https://")) {
+        if (formData.image && !formData.image.startsWith("http://") && !formData.image.startsWith("https://") || !formData.image.startsWith("https://")) {
             setError("Please enter a valid imageURL")
             return;
         } 
